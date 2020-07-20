@@ -5,5 +5,6 @@ public class Main {
 	    Actions.fileToList("eredmenyek.csv");
         System.out.println(Actions.task3("Real Madrid"));
         System.out.println(Actions.task4());
+        System.out.println(Actions.task5("barcelona"));
     }
 }

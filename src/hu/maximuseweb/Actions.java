@@ -71,4 +71,22 @@ class Actions {
 
         return "4. feladat: Volt döntetlen? " + ((result) ? "igen" : "nem");
     }
+
+    static String task5(String search) {
+        String s = new String(search.toLowerCase().getBytes(StandardCharsets.ISO_8859_1), StandardCharsets.UTF_8);
+        String name = "";
+
+        for (Match match : Actions.getList()) {
+            if (match.getHomeName().toLowerCase().contains(s)) {
+                name = match.getHomeName();
+                break;
+            }
+            else if (match.getGuestName().toLowerCase().contains(s)) {
+                name = match.getGuestName();
+                break;
+            }
+        }
+
+        return "5. feladat: barcelonaicsapat neve: " + name;
+    }
 }
