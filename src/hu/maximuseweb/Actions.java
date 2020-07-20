@@ -89,4 +89,17 @@ class Actions {
 
         return "5. feladat: barcelonaicsapat neve: " + name;
     }
+
+    static void task6(String date) {
+        ArrayList<String> result = new ArrayList<>();
+
+        for (Match match : Actions.getList()) {
+            if (match.getDate().equals(date)) {
+                result.add(match.getHomeName() + " - " + match.getGuestName() + " (" + match.getHomePoints() + ":" + match.getGuestPoints() + ")");
+            }
+        }
+
+        System.out.println("6. feladat: ");
+        result.forEach((value) -> System.out.println("\t" + value));
+    }
 }
