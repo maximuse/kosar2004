@@ -58,4 +58,17 @@ class Actions {
 
         return "3. feladat: " + teamName + ": Hazai: " + home + ", Idegen: " + guest;
     }
+
+    static String task4() {
+        boolean result = false;
+
+        for (Match match : Actions.getList()) {
+            if (match.getHomePoints() == match.getGuestPoints()) {
+                result = true;
+                break;
+            }
+        }
+
+        return "4. feladat: Volt döntetlen? " + ((result) ? "igen" : "nem");
+    }
 }
