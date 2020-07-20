@@ -115,7 +115,6 @@ class Actions {
             stadiums.add(match.getVenue());
         }
 
-
         for (String stadium : stadiums) {
             counter = 0;
 
