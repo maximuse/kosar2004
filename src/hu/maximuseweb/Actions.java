@@ -3,6 +3,9 @@ package hu.maximuseweb;
 import java.io.RandomAccessFile;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.TreeSet;
 
 class Actions {
     private static ArrayList<Match> list;
@@ -101,5 +104,31 @@ class Actions {
 
         System.out.println("6. feladat: ");
         result.forEach((value) -> System.out.println("\t" + value));
+    }
+
+    static void task7(int min) {
+        TreeSet<String> stadiums = new TreeSet<>();
+        Map<String, Integer> matchPerStadium = new HashMap<>();
+        int counter;
+
+        for (Match match : Actions.getList()) {
+            stadiums.add(match.getVenue());
+        }
+
+
+        for (String stadium : stadiums) {
+            counter = 0;
+
+            for (Match match : Actions.getList()) {
+                if (stadium.equals(match.getVenue())) {
+                    counter++;
+                }
+            }
+
+            matchPerStadium.put(stadium, counter);
+        }
+
+        System.out.print("7. feladat: ");
+        matchPerStadium.entrySet().stream().sorted(Map.Entry.<String, Integer>comparingByValue().reversed()).forEach((value) -> System.out.print((value.getValue() > min) ? "\n\t" + value.getKey() + ": " + value.getValue() : ""));
     }
 }

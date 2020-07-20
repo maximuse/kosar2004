@@ -7,5 +7,6 @@ public class Main {
         System.out.println(Actions.task4());
         System.out.println(Actions.task5("barcelona"));
         Actions.task6("2004-11-21");
+        Actions.task7(20);
     }
 }
