@@ -102,7 +102,7 @@ class Actions {
             }
         }
 
-        System.out.println("6. feladat: ");
+        System.out.println("6. feladat:");
         result.forEach((value) -> System.out.println("\t" + value));
     }
 
@@ -128,7 +128,7 @@ class Actions {
             matchPerStadium.put(stadium, counter);
         }
 
-        System.out.print("7. feladat: ");
+        System.out.print("7. feladat:");
         matchPerStadium.entrySet().stream().sorted(Map.Entry.<String, Integer>comparingByValue().reversed()).forEach((value) -> System.out.print((value.getValue() > min) ? "\n\t" + value.getKey() + ": " + value.getValue() : ""));
     }
 }
